@@ -1,0 +1,3 @@
+git status shows all the files and all the changes you've made in your folder.
+
+git add . saves all the files in red and turns to green
