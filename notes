@@ -1,3 +1,16 @@
-git status shows all the files and all the changes you've made in your folder.
+Api using = Pokeapi.co
 
-git add . saves all the files in red and turns to green
+Pokemon app wtih Pokemon Api
+
+- Welcome the user
+- Ask if they'd like to explore the world of pokemon
+- If user inputs yes, ask user what pokemon they'd like to learn about. 
+-If User selects no the say goodbye to user
+- Show species and/or moves and/or form. 
+- Ask user if they would like to search for another pokemon. 
+- If user responds yes, ask for number will return if user responds no exit screen.
+
+CLI class - deals with the things showing onto the terminal
+API class - Deal with all API things
+Pokemon class - will deal with all Pokemon
+
