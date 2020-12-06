@@ -1,19 +1,19 @@
 class CLI
 
     def start
-        self.pokedex_logo
+        self.poke_logo
         sleep(1)
         puts"----------------------------"
         puts "Welcome Pokemaster!"
         puts"----------------------------"
         sleep(1)
         API.grab_pokemons
-        self.menu
+        self.start
         loop_or_exit
     end
         
 
-    def menu
+    def start
 
         sleep(1)
         puts "Would you like to explore the world of Pokemon?"
@@ -21,60 +21,69 @@ class CLI
         sleep(1)
         puts "Y/N?"
         puts"----------------------------"
-        user_input = gets.strip.downcase
+        input = gets.strip.downcase
         
-        if user_input == "yes" || user_input == "y"
-            self.prompt_user
+        if input == "y"
             sleep(1)
+            puts "Here we go!"
+            sleep(2)
             self.display_list_of_pokemons
             self.ask_user_for_pokemon_choice
-            puts "knowledge is frutile!"
+            puts"----------------------------"
             sleep(2)
-    
-        elsif user_input == "no" || user_input == "n"
+
+        elsif input == "n"
+            puts"----------------------------"
             puts "Farewell Pokemaster!"
+            puts"----------------------------"
             exit
         else
-        sleep(1)
-        puts "Is there anything else you'd like to see?"
-        sleep(1)
-        self.ask_user_for_pokemon_choice
-    end
+            puts"----------------------------"
+            puts "Invalid choice"
+            puts"----------------------------"
+            start
+        end
+    end 
 
-end 
-
-    def prompt_user
-        puts"----------------------------"
-        puts "Here we go!"
-    end
-    
-    
     def display_list_of_pokemons
         
-        puts "\n"
+
         Pokemon.all.each.with_index do |pokemon, index|
-            puts "#{index+1}. #{pokemon.name}" 
+            puts "#{index + 1}. #{pokemon.name}" 
+
         end
     end
 
     def loop_or_exit
-        puts "Would you like to see more? Enter y/n"
+        puts"----------------------------"
+        puts "Would you like to view more? Please enter Y/N"
+        puts"----------------------------"
         input = gets.strip.downcase
+
         if input == "y"
             self.display_list_of_pokemons
             self.ask_user_for_pokemon_choice
 
-        else
+        elsif input == "n"
+            puts"----------------------------"
             puts "Farewell Pokemaster!"
+            puts"----------------------------"
             exit
+        
+        else
+            puts "Invalid choice"
+            loop_or_exit
         end
     end
 
     def ask_user_for_pokemon_choice
 
+        puts"----------------------------"
         puts "Enter a number to the Pokemon you'd like to learn more about."
+        puts"----------------------------"
         pokemon_choice_index = gets.strip.to_i - 1
         max_limit = Pokemon.all.length - 1
+        puts"----------------------------"
 
         until pokemon_choice_index.between?(0,max_limit)
             puts "Invalid choice"
@@ -83,8 +92,9 @@ end
 
         #User's pokemon choice
         pokemon_object_lookup = Pokemon.all[pokemon_choice_index]
+        sleep(2)
         puts "Let's see what there is to learn."
-        sleep(1)
+        sleep(2)
         API.pokemon_info(pokemon_object_lookup)
         self.display_pokemon_info(pokemon_object_lookup)
     end
@@ -106,11 +116,10 @@ end
         puts "Weight: #{pokemon_object_lookup.weight}"
         sleep(3)
         loop_or_exit
-
-        
     end
-    def pokedex_logo
-        file = File.open("./lib/pokemon/pokedex.txt")
+
+    def poke_logo
+        file = File.open("./lib/pokemon/poke.txt")
         puts file.read
     end
 end
