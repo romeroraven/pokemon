@@ -8,12 +8,11 @@ class CLI
         puts"----------------------------"
         sleep(1)
         API.grab_pokemons
-        self.start
+        self.menu
         loop_or_exit
     end
-        
 
-    def start
+    def menu
 
         sleep(1)
         puts "Would you like to explore the world of Pokemon?"
@@ -40,16 +39,15 @@ class CLI
             puts"----------------------------"
             puts "Invalid choice"
             puts"----------------------------"
-            start
+            menu
         end
     end 
 
     def display_list_of_pokemons
-        
 
         Pokemon.all.each.with_index do |pokemon, index|
-            puts "#{index + 1}. #{pokemon.name}" 
-
+            puts "#{index+1}. #{pokemon.name}" 
+        
         end
     end
 
@@ -70,6 +68,7 @@ class CLI
             exit
         
         else
+            puts"----------------------------"
             puts "Invalid choice"
             loop_or_exit
         end
@@ -85,6 +84,7 @@ class CLI
         puts"----------------------------"
 
         until pokemon_choice_index.between?(0,max_limit)
+            puts"----------------------------"
             puts "Invalid choice"
             pokemon_choice_index = gets.strip.to_i - 1  #If invalid user will be asked again
         end
@@ -92,7 +92,8 @@ class CLI
         #User's pokemon choice
         pokemon_object_lookup = Pokemon.all[pokemon_choice_index]
         sleep(2)
-        puts "Let's see what there is to learn."
+        puts "Let's see what there is to learn!"
+        puts"----------------------------"
         sleep(2)
         API.pokemon_info(pokemon_object_lookup)
         self.display_pokemon_info(pokemon_object_lookup)
@@ -119,6 +120,7 @@ class CLI
 
     def poke_logo
         file = File.open("./lib/pokemon/poke.txt")
-        puts file.read
-    end
+        puts file.read	        puts file.read
+    end	    
+
 end

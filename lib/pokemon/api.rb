@@ -28,9 +28,9 @@ end
         pokemon_object_lookup.type = pokemon_details["types"][0]["type"]["name"]
         pokemon_object_lookup.moves = pokemon_details["moves"][0]["move"]["name"]
         pokemon_object_lookup.id = pokemon_details["id"]
-        
-        
-        
+    
+    
+    
     end
 end
 

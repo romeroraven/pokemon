@@ -1,5 +1,6 @@
 require "poke-api-v2"
 class Pokemon
+    
     attr_accessor :name, :url, :height, :weight, :abilities, :type, :moves, :id, :description
 
     @@all = [ ]
