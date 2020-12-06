@@ -26,7 +26,6 @@ class CLI
         if input == "y"
             sleep(1)
             puts "Here we go!"
-            sleep(2)
             self.display_list_of_pokemons
             self.ask_user_for_pokemon_choice
             puts"----------------------------"
