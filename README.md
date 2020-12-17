@@ -1,16 +1,12 @@
 # Pokemon
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pokemon`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome! This CLI gem gets the data from an external data source (https://pokeapi.co/api/v2/pokemon?limit=151) to list all the first generation of Pokemon and includes their height, weight, move, and ability.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+This gem will have to be cloned to your machine. In your terminal type:
 
-```ruby
-gem 'pokemon'
-```
+    $ git git@github.com:[USERNAME]/pokemon.git
 
 And then execute:
 
@@ -22,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type this in your terminal and follow the CLI prompts!
+
+$ ruby bin/run
 
 ## Development
 
