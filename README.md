@@ -6,7 +6,7 @@ Welcome! This CLI gem gets the data from an external data source (https://pokeap
 
 This gem will have to be cloned to your machine. In your terminal type:
 
-    $ git git@github.com:[USERNAME]/pokemon.git
+    $ git clone git@github.com:[USERNAME]/pokemon.git
 
 And then execute:
 
