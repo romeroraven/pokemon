@@ -1,6 +1,6 @@
 # Pokemon
 
-Welcome! This CLI gem gets the data from an external data source (https://pokeapi.co/api/v2/pokemon?limit=151) to list all the first generation of Pokemon and includes their height, weight, move, and ability.
+Welcome! This CLI gem gets the data from an external data source (https://pokeapi.co/docs/v2) to list all the first generation of Pokemon and includes their height, weight, move, and ability.
 
 ## Installation
 
