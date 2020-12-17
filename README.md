@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Type this in your terminal and follow the CLI prompts!
 
-$ ruby bin/run
+    $ ruby bin/run
 
 ## Development
 
