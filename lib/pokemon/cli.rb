@@ -84,7 +84,6 @@ class CLI
         puts"----------------------------"
 
         until pokemon_choice_index.between?(0,max_limit)
-            puts"----------------------------"
             puts "Invalid choice"
             pokemon_choice_index = gets.strip.to_i - 1  #If invalid user will be asked again
         end
@@ -100,9 +99,8 @@ class CLI
     end
 
     def display_pokemon_info(pokemon_object_lookup)
-
         #details displayed for user
-
+        
         puts "Name: #{pokemon_object_lookup.name}"
         sleep(1)
         puts "Type: #{pokemon_object_lookup.type}"
@@ -114,13 +112,13 @@ class CLI
         puts "Height: #{pokemon_object_lookup.height}"
         sleep(1)
         puts "Weight: #{pokemon_object_lookup.weight}"
-        sleep(3)
+        sleep(1)
         loop_or_exit
     end
 
     def poke_logo
         file = File.open("./lib/pokemon/poke.txt")
-        puts file.read	        puts file.read
+        puts file.read
     end	    
 
 end
